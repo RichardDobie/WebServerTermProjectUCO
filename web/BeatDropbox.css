@@ -1,0 +1,20 @@
+/* 
+    Document   : BeatDropbox
+    Created on : Apr 9, 2013, 8:10:54 PM
+    Author     : Doobifier
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+    
+    font-family: Arial,Helvetica,sans-serif;
+    background-color: #9999ff;
+    text-align: left;
+   
+}
+.hr {
+    color: #2222ff
+}
+

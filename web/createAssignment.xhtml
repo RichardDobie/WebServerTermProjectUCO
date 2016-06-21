@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Create new Assignment</title>
+    </h:head>
+    <h:body>
+        <h1>Create Assignment</h1>
+        
+        <h:form>
+            <h3>Name:</h3><p:inputText id="inlineCal" value="#{assignmentBean.name}" /><br/>
+            <h3>Description:</h3><p:inputTextarea id="description" value="#{assignmentBean.description}" /> <br/>
+            <h3>Due by:</h3><p:calendar id="duedate" pattern="MM/dd/yyyy" value="#{assignmentBean.duedate}"/> <br/>
+            <p:commandButton action="#{assignmentBean.createAssignment()}" value="Create" />
+            <p:commandButton action="#{assignmentBean.cancel()}" value="Cancel" />
+        </h:form>
+    </h:body>
+</html>
+

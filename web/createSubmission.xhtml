@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Create New Submission</title>
+    </h:head>
+    <h:body>
+        <h1>Create Submission for #{submissionBean.assignmentName}</h1>
+        <h:form>
+            Upload Assignment Files:
+            <p:commandButton action="#{submissionBean.createSubmission()}" value="Submit" />
+            <p:commandButton action="#{submissionBean.cancel()}" value="Cancel" />
+        </h:form>
+        <form action="uploadSubmission" method="post" enctype="multipart/form-data">
+            Upload a file: <input type="file" name="filename"/><br/>
+            <input type="submit" value="Upload"/>
+        </form> 
+    </h:body>
+</html>
+

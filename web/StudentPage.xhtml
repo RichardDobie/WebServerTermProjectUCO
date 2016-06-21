@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Student's Page</title>
+    </h:head>
+    <h:body>
+        <h1>Welcome #{loginBean.firstName} #{loginBean.lastName} </h1>
+        <hr/>
+        <h1>Assignments</h1>
+        <p:dataTable border="1" value="#{assignmentBean.listAssignments}" var="a">
+            <p:column>
+                <f:facet name="header">Assignment</f:facet>
+                #{a.name}
+            </p:column>
+            
+            <p:column>
+                <f:facet name="header">Description</f:facet>
+                #{a.description}
+            </p:column>
+            
+            <p:column>
+                <f:facet name="header">Due Date</f:facet>
+                #{a.duedate}
+            </p:column>
+            <p:column>
+                <f:facet name="header">Download</f:facet>
+                <h:form>
+                    <h:commandButton action="download" value="Download Instructions"/>
+                </h:form>
+            </p:column>
+            <p:column>
+                <f:facet name="header">Submission</f:facet>
+                <h:form>
+                    <h:commandButton action="#{submissionBean.prepareSubmission(a.assN, loginBean.ID, a.name)}" value="Make Submission"/>
+                </h:form>
+            </p:column>
+        </p:dataTable>
+        <h:form>
+            <p:commandButton action="#{submissionBean.updateStudentSubmissions(loginBean.ID)}" value="View Submissions"/>
+        </h:form>
+        <br/>
+        <strong>Your Info</strong>
+        <table border ="0">
+            <tr><td>name:</td><td>#{loginBean.firstName} #{loginBean.lastName}</td></tr>
+            <tr><td>email:</td><td> #{loginBean.emailAddress}</td></tr>
+            <tr><td>Phone Number:</td><td>#{loginBean.phoneNumber}</td></tr>
+            <tr><td>Gender:</td><td>#{loginBean.gender}</td></tr>
+            <tr><td>Hometown:</td><td>#{loginBean.hometown}</td></tr>
+        </table>
+        <h:form>
+            <p:commandButton action="editStudentInfo" value="Edit" />
+        </h:form>
+        <h:form>
+            <p:commandButton action="#{loginBean.killSession()}" value="Log Out" />
+        </h:form>
+    </h:body>
+</html>
+

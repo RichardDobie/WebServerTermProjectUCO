@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Log In</title>
+        <link rel="stylesheet" href="default.css"/>
+    </h:head>
+    <h:body>
+        <h1>Welcome, please sign in</h1><br/>
+        <div id="section">
+          <h:form>
+              <table border = "0">
+                  <tr><td>Login(E-Mail):</td><td><h:inputText id="firstname" value="#{loginBean.emailAddress}"/></td>
+                  <td><h:outputText value="#{loginBean.emailAddressError}"/></td></tr>
+                  <tr><td>Password:</td><td><h:inputSecret value="#{loginBean.password}"/></td>
+                  <td><h:outputText value="#{loginBean.passwordError}"/></td></tr>
+                  <tr><td></td><td align="right"><h:commandButton value="Log In" action="#{loginBean.logIn}"/></td></tr>
+                </table>
+          </h:form>
+        new user? <h:link value ="Sign Up!" outcome="Register" />
+        </div>
+    </h:body>
+
+</html>
+

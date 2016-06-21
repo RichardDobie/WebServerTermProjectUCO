@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+   <h:head>
+        <title>Registration</title>
+    </h:head>
+    <h:body>
+        <h1>Welcome to Registration</h1><br/>
+        <h:form>
+          <table border="0">
+              <tr><td>First name:</td><td><h:inputText id="firstname" value="#{loginBean.firstName}"/></td>
+                  <td><h:outputText value="#{loginBean.firstNameError}"/></td></tr>
+              <tr><td>Last name:</td><td><h:inputText value="#{loginBean.lastName}"/></td>
+                  <td><h:outputText value="#{loginBean.lastNameError}"/></td></tr>
+              <tr><td>Password:</td><td><h:inputSecret id="password" value="#{loginBean.password}"/></td>
+                    <td><h:outputText value="#{loginBean.passwordError}"/></td></tr>
+              <tr><td>confirm password:</td><td><h:inputSecret value="#{loginBean.confirmPassword}"/></td>
+                  <td><h:outputText value="#{loginBean.confirmPasswordError}"/></td></tr>
+              <tr><td>E-mail:</td><td><h:inputText value="#{loginBean.emailAddress}"/></td>
+                  <td><h:outputText value="#{loginBean.emailAddressError}"/></td></tr>
+              <tr><td>Phone number:</td><td><h:inputText value="#{loginBean.phoneNumber}"/></td>
+                  <td><h:outputText value="#{loginBean.phoneNumberError}"/></td></tr>
+            </table>
+            Gender:<h:selectOneRadio value="#{loginBean.gender}">
+                <f:selectItems value="#{loginBean.genderOptions}"/>
+            <h:outputText value="#{loginBean.genderError}"/>
+            </h:selectOneRadio>
+            Languages:<h:selectManyCheckbox value="#{loginBean.languages}">
+                <f:selectItems value="#{loginBean.languageOptions}"/>
+                <h:outputText value="#{loginBean.languagesError}"/>
+            </h:selectManyCheckbox>
+            Hometown:<h:selectOneMenu value="#{loginBean.hometown}">
+                <f:selectItems value="#{loginBean.hometownOptions}"/>
+            </h:selectOneMenu><h:outputText value="#{loginBean.hometownError}"/><br/>
+            <h:commandButton value="Sign Up!" action="#{loginBean.register}"/>
+        </h:form>  
+        
+        <h:form>
+        <h:commandButton value="Go Back" action="index" />    
+        </h:form>
+    </h:body>
+</html>
+

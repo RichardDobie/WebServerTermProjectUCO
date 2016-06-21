@@ -1,0 +1,35 @@
+/* 
+    Document   : default
+    Created on : Apr 9, 2013, 8:27:45 PM
+    Author     : Doobifier
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+html, body {
+    height: 100%
+}
+
+h1 {
+    text-align: center;
+}
+body {
+    background: #BBBBFF;
+    font-family: 'arial';
+    font-size: 13px;
+    color: #1111ff;  
+}
+
+#section { 
+    text-align: center;
+    color: black;
+    background: white;
+    margin-left: 35%;
+    margin-right: 35%;
+    border: #1111ff;
+    position: relative;
+}
